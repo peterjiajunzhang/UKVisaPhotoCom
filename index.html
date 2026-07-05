@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Visa ID Photo 1-Tap — cream/grey background, one tap, on-device</title>
+    <meta name="description" content="Turn any portrait into a compliant UK visa digital photo: automatic background removal onto the gov.uk light grey/cream background (not white), 630×810 px export, and on-device privacy. For iPhone.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#012169',
+                        'brand-dark': '#000f3d',
+                        navy: '#0a1628',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: radial-gradient(ellipse 120% 80% at 50% 20%, rgba(1, 33, 105, 0.28) 0%, transparent 50%),
+                linear-gradient(145deg, #050912 0%, #0a1628 45%, #0d1a2a 100%);
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
+        @keyframes complianceRowIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .compliance-row { opacity: 0; animation: complianceRowIn 0.5s ease forwards; }
+        .compliance-row:nth-child(1) { animation-delay: 0.05s; }
+        .compliance-row:nth-child(2) { animation-delay: 0.12s; }
+        .compliance-row:nth-child(3) { animation-delay: 0.19s; }
+        .compliance-row:nth-child(4) { animation-delay: 0.26s; }
+        .compliance-row:nth-child(5) { animation-delay: 0.33s; }
+        .compliance-row:nth-child(6) { animation-delay: 0.40s; }
+        .compliance-row:nth-child(7) { animation-delay: 0.47s; }
+        .mock-phone {
+            width: min(280px, 70vw);
+            border-radius: 2.5rem;
+            background: linear-gradient(165deg, #101a2c 0%, #0a1628 100%);
+            padding: 14px;
+            box-shadow: 0 30px 60px -12px rgba(10, 22, 40, 0.35), inset 0 0 0 1px rgba(255,255,255,0.06);
+        }
+        .mock-screen { background: #e8e8e2; border-radius: 1.75rem; overflow: hidden; aspect-ratio: 35 / 45; position: relative; }
+        .mock-notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 34%; height: 18px; background: #0a1628; border-radius: 999px; }
+        .swatch { width: 100%; height: 100%; display: block; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="AppIcon.png" alt="UK Visa ID Photo 1-Tap" class="w-8 h-8 rounded-lg" width="1024" height="1024" decoding="async">
+                <span class="font-semibold text-gray-900 tracking-tight">UK Visa ID Photo 1-Tap</span>
+            </div>
+            <div class="flex items-center gap-6 text-sm">
+                <a href="#app" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Screenshots</a>
+                <a href="#features" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Features</a>
+                <a href="#compliance-checklist" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Compliance</a>
+                <a href="#languages" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Languages</a>
+                <a href="#pricing" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Pricing</a>
+                <a href="#download" class="bg-brand text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-brand-dark transition">Coming Soon</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gradient-hero text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 py-20 md:py-32">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-1.5 text-sm mb-8">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="text-gray-200">100% on-device — auto cutout &amp; export on your iPhone</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
+                    <span class="text-white">One-Tap</span><br>
+                    <span class="text-blue-300">UK Visa Photos</span><br>
+                    <span class="text-gray-200 text-3xl sm:text-4xl md:text-5xl font-semibold">Cream/grey — not white.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-300 max-w-xl mx-auto mb-10 leading-relaxed">
+                    Built for the <strong class="text-white">gov.uk / UKVI</strong> visa photo rule — the one market where the background must be <strong class="text-white">plain light grey or cream, not pure white</strong>. Automatic background removal, 630×810 px export, and a live checklist before you pay.
+                </p>
+
+                <div id="download" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <span class="inline-flex items-center gap-2 bg-white text-navy px-8 py-3.5 rounded-xl font-semibold text-base cursor-default">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                        Coming soon to the App Store
+                    </span>
+                    <a href="mailto:zhangjj2007@yahoo.com?subject=Notify%20me%20-%20UK%20Visa%20Photo" class="text-gray-300 hover:text-white text-sm underline underline-offset-4 transition">Get notified at launch</a>
+                </div>
+                <p class="text-gray-500 text-sm mt-4">iOS 17+ &middot; iPhone</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-gray-500">
+            <div class="flex items-center gap-2"><i data-lucide="scissors" class="w-4 h-4 text-brand"></i><span>Automatic background removal</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4 text-brand"></i><span>Light grey/cream background (gov.uk rule)</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-brand"></i><span>Apple Vision on-device</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="eye-off" class="w-4 h-4 text-brand"></i><span>No photo uploads to us</span></div>
+        </div>
+    </section>
+
+    <section id="background-rule" class="py-16 md:py-20 bg-white border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">The rule everyone gets wrong</p>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Not pure white. <span class="text-brand">Light grey or cream.</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Every other market we support (US, China, Schengen, India, Japan, Canada) uses a white background. The UK's gov.uk guidance is explicit: <strong>plain light-coloured — cream or light grey</strong>. This app composites onto that background by default, not white.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                    <div class="h-28 bg-white flex items-end justify-center pb-2"><span class="text-xs font-semibold text-gray-400">Pure white</span></div>
+                    <div class="bg-red-50 text-red-600 text-xs font-semibold text-center py-2">✕ Wrong for UK</div>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                    <div class="h-28 flex items-end justify-center pb-2" style="background:#e8e8e2;"><span class="text-xs font-semibold text-gray-500">Light grey/cream</span></div>
+                    <div class="bg-emerald-50 text-emerald-600 text-xs font-semibold text-center py-2">✓ What this app uses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="app" class="py-20 md:py-28 scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">In the app</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Pick a photo.<br><span class="text-brand">UKVI-upload-ready in one tap.</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Real device screenshots go here once the first TestFlight build lands — for now, here's the shape of the flow.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
+                <div class="flex flex-col items-center">
+                    <div class="mock-phone">
+                        <div class="mock-screen flex flex-col items-center justify-center gap-3 px-4">
+                            <div class="mock-notch"></div>
+                            <i data-lucide="image" class="w-9 h-9 text-brand mt-6"></i>
+                            <div class="w-full space-y-1.5 mt-2"><div class="h-16 rounded-lg bg-white/60 border border-gray-300"></div></div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xs font-semibold text-gray-500">1 &middot; Pick a photo</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="mock-phone">
+                        <div class="mock-screen flex flex-col items-center justify-center gap-2 px-4">
+                            <div class="mock-notch"></div>
+                            <div class="w-20 h-24 rounded-md bg-white/70 border border-gray-300 mt-8 mb-2"></div>
+                            <div class="w-full space-y-1.5">
+                                <div class="h-4 rounded bg-emerald-50 border border-emerald-200 flex items-center px-2 text-[9px] font-semibold text-emerald-600">✓ 35×45mm, 630×810px</div>
+                                <div class="h-4 rounded bg-emerald-50 border border-emerald-200 flex items-center px-2 text-[9px] font-semibold text-emerald-600">✓ Head 64-76%</div>
+                                <div class="h-4 rounded bg-emerald-50 border border-emerald-200 flex items-center px-2 text-[9px] font-semibold text-emerald-600">✓ Grey/cream, not white</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xs font-semibold text-gray-500">2 &middot; Live export checklist</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="mock-phone">
+                        <div class="mock-screen flex flex-col items-center justify-center gap-3 px-4">
+                            <div class="mock-notch"></div>
+                            <div class="w-24 h-28 rounded-lg bg-white/80 border-2 border-gray-300 mt-8 shadow-sm"></div>
+                            <div class="flex gap-2 mt-2">
+                                <div class="w-16 h-7 rounded-lg bg-brand flex items-center justify-center text-[9px] font-bold text-white">Download</div>
+                                <div class="w-14 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-[9px] font-bold text-gray-500">Share</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xs font-semibold text-gray-500">3 &middot; Unlock &amp; export</p>
+                </div>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-12 max-w-2xl mx-auto">The same <strong class="text-gray-600">live checklist</strong> style as our other apps — tuned to gov.uk's visa photo guidance.</p>
+        </div>
+    </section>
+
+    <section id="compliance-checklist" class="py-16 md:py-24 bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">What we optimize for (UK visa photo)</h2>
+                <p class="text-gray-500">The app guides composition toward the digital photo spec published on <strong>gov.uk</strong>. Always confirm the latest rules before you submit — government guidance can change without notice.</p>
+            </div>
+            <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 md:p-8">
+                <ul class="space-y-4 text-left text-sm md:text-base text-gray-800">
+                    <li class="compliance-row flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i><span><strong>630×810 px export</strong> &mdash; comfortably exceeds gov.uk's 600×750 px minimum, at the correct 35:45 aspect ratio.</span></li>
+                    <li class="compliance-row flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i><span><strong>Light grey/cream background</strong> &mdash; not white &mdash; matching gov.uk's stated rule.</span></li>
+                    <li class="compliance-row flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i><span><strong>Head height 64–76%</strong> of frame (29–34mm of a 45mm frame), the print-photo convention we also apply to the digital export.</span></li>
+                    <li class="compliance-row flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i><span><strong>JPEG size policy</strong> &mdash; export sized within gov.uk's <strong>50 KB – 6 MB</strong> window.</span></li>
+                    <li class="compliance-row flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i><span><strong>No face reshaping</strong> &mdash; segmentation and cropping only; we don't slim or resize facial geometry.</span></li>
+                    <li class="compliance-row flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i><span><strong>Privacy</strong> &mdash; segmentation and matting run on your iPhone; no separate upload to our servers for processing.</span></li>
+                </ul>
+                <p class="text-xs text-gray-400 mt-6 leading-relaxed">This app targets the <strong>digital upload</strong> spec used for online visa/UKVI account applications. A printed 35×45mm photo (same physical size) is still used as a fallback at some VFS Global visa application centres — the same export works for both. Final acceptance is always at the discretion of UKVI or the visa application center you use.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="bg-gray-50 py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Built for the <span class="text-brand">UK visa</span> photo rule</h2>
+                <p class="text-gray-500 text-lg max-w-xl mx-auto">One tap from photo library to a compliant portrait on the correct background — sized and checked for gov.uk's guidance.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5"><i data-lucide="sparkles" class="w-6 h-6 text-brand"></i></div>
+                    <h3 class="text-lg font-semibold mb-2">Auto cutout &amp; correct backdrop</h3>
+                    <p class="text-gray-500 leading-relaxed">Apple Vision–powered segmentation removes busy backgrounds and composites onto <strong>light grey/cream</strong> — not white — the exact tone gov.uk asks for.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5"><i data-lucide="scan-face" class="w-6 h-6 text-brand"></i></div>
+                    <h3 class="text-lg font-semibold mb-2">35×45mm crop &amp; checklist</h3>
+                    <p class="text-gray-500 leading-relaxed">Framing and readouts aligned to the UK's reference proportions, exported at <strong>630×810 px</strong> with head height held to <strong>64–76%</strong>.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5"><i data-lucide="lock" class="w-6 h-6 text-brand"></i></div>
+                    <h3 class="text-lg font-semibold mb-2">On-device only</h3>
+                    <p class="text-gray-500 leading-relaxed">Core image work stays on your phone. Purchase flows use Apple's systems; we don't run our own photo cloud for editing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="languages" class="py-16 md:py-24 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-xl mb-5"><i data-lucide="languages" class="w-6 h-6 text-brand"></i></div>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Same multilingual UI as our app family</h2>
+            <p class="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">Built-in language switcher: English, 简体中文, 繁體中文, Español, 日本語, Deutsch, Français.</p>
+            <ul class="flex flex-wrap items-center justify-center gap-3 max-w-3xl mx-auto text-sm md:text-base">
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">English</li>
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">简体中文</li>
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">繁體中文</li>
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">Español</li>
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">日本語</li>
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">Deutsch</li>
+                <li class="bg-gray-50 border border-gray-200 rounded-full px-4 py-2 font-medium text-gray-800">Français</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Three steps</h2></div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-brand text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">1</div>
+                    <h3 class="font-semibold mb-2">Pick a photo</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Any clear front-facing shot from your library — more headroom makes composition easier.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-brand text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">2</div>
+                    <h3 class="font-semibold mb-2">One-tap process</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Auto cutout to light grey/cream, crop to 35×45mm proportions, then review the animated checklist.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-brand text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-5">3</div>
+                    <h3 class="font-semibold mb-2">Unlock &amp; export</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Single consumable purchase per export — save to Photos and upload to your UKVI account.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="bg-gray-50 py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Pay per export</h2>
+                <p class="text-gray-500 text-lg max-w-xl mx-auto">No subscription — unlock one processed photo at a time, same model as our other apps.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-brand text-white rounded-2xl p-8 shadow-xl shadow-brand/20">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="AppIcon.png" alt="" class="w-10 h-10 rounded-xl" width="1024" height="1024" decoding="async">
+                        <span class="font-semibold">UK Visa ID Photo 1-Tap</span>
+                    </div>
+                    <div class="mb-6"><span class="text-5xl font-bold">$1.99</span><span class="text-white/70 ml-1">/ export</span></div>
+                    <ul class="space-y-3 text-sm text-white/90">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-white flex-shrink-0"></i>630×810 px export (35×45mm)</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-white flex-shrink-0"></i>Automatic cutout onto grey/cream</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-white flex-shrink-0"></i>gov.uk checklist in-app</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-white flex-shrink-0"></i>On-device processing</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col justify-center">
+                    <h3 class="font-semibold text-gray-900 mb-2">Why not a photo studio?</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Studios and chemists work great when you're already there — this app is for when you already have a decent phone photo and want a UKVI-ready file fast, privately, and repeatably.</p>
+                    <p class="text-xs text-gray-400">Exact storefront price may vary by region; shown in USD on the U.S. App Store.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="use-cases" class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">When people use it</h2></div>
+            <div class="flex flex-wrap items-center justify-center gap-3 max-w-3xl mx-auto">
+                <span class="bg-white border border-gray-200 rounded-full px-5 py-2 text-sm font-medium">UKVI online visa application</span>
+                <span class="bg-white border border-gray-200 rounded-full px-5 py-2 text-sm font-medium">Visitor, work &amp; study visas</span>
+                <span class="bg-white border border-gray-200 rounded-full px-5 py-2 text-sm font-medium">VFS Global application centre (printed fallback)</span>
+                <span class="bg-white border border-gray-200 rounded-full px-5 py-2 text-sm font-medium">Replacing a rejected photo</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-20 md:py-28">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <img src="AppIcon.png" alt="" class="w-20 h-20 rounded-[22px] mx-auto mb-8 shadow-lg" width="1024" height="1024" decoding="async">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Your UK visa photo<br><span class="text-brand">starts on your phone.</span></h2>
+            <p class="text-gray-500 text-lg mb-10">Launching soon on the App Store — $1.99 per full-resolution export.</p>
+            <a href="mailto:zhangjj2007@yahoo.com?subject=Notify%20me%20-%20UK%20Visa%20Photo" class="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-dark transition text-base">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                Get notified at launch
+            </a>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-100 py-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+            <div class="flex items-center gap-3">
+                <img src="AppIcon.png" alt="" class="w-6 h-6 rounded-md" width="1024" height="1024" decoding="async">
+                <span>&copy; 2026 UK Visa ID Photo 1-Tap</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="privacy.html" class="hover:text-gray-600 transition">Privacy Policy</a>
+                <a href="mailto:zhangjj2007@yahoo.com" class="hover:text-gray-600 transition">Contact</a>
+                <a href="../USVisaPhotoCom/index.html" class="hover:text-gray-600 transition">US Visa Photo</a>
+                <a href="../SchengenVisaPhotoCom/index.html" class="hover:text-gray-600 transition">Schengen Visa Photo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
