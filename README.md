@@ -10,10 +10,10 @@ Live site: **https://uk.visaphoto1tap.com/**
 | `AppIcon.png` | **Real app icon**, copied from `VisaPhotoApps/UKVisaPhoto/Assets.xcassets/AppIcon.appiconset/AppIcon.png` — unlike India/Japan/Canada, this one already existed |
 | `VisaPhotoApps/Marketing/UK/xiaohongshu/` | Xiaohongshu post previews & export scripts |
 | `VisaPhotoApps/Marketing/UK/appstore/` | App Store screenshot campaign previews & export scripts |
-| `screenshots/` | Real device screenshots — **5 of 6 captured** (missing `05-exported.png`); confirmed showing the correct `#E8E8E2` grey/cream background (not white) |
+| `screenshots/` | Real device screenshots — **all 6 captured**, confirmed showing the correct `#E8E8E2` grey/cream background (not white) |
 | `demos/` | Real before/after export pairs — all 6 captured, confirmed showing the correct `#E8E8E2` grey/cream background (not white) |
 
-**Status:** real screenshots and demo pairs are mostly in. `index.html` has a real `#demos` before/after wall and a real `#app` screenshot grid (currently 5 screens: home, checklist, paywall, saved photos, languages). **Still needed: `05-exported.png`** (the unlocked-result screen with Share/Rate/Review/Download/Start over) — drop it into `screenshots/` and add its `<figure>` back into `index.html`'s `#app` grid + the App Store campaign slide that references it. iOS app has no Info.plist/App.swift yet and no Apple ID.
+**Status:** all real screenshots and demo pairs are in. `index.html` has a real `#demos` before/after wall and a full 6-screen real `#app` screenshot grid. iOS app has no Info.plist/App.swift yet and no Apple ID.
 
 ## The one thing that makes UK different from every other app in this family
 
@@ -22,8 +22,7 @@ Live site: **https://uk.visaphoto1tap.com/**
 ## Before submitting to App Store Connect
 
 1. Once `AppStoreAppleID` is filled in (once the UKVisaPhoto target has an Info.plist and Connect record), update the CTA to a real App Store link.
-2. Capture `05-exported.png` (see Status above) — the last missing canonical screenshot.
-3. Re-run exports after any new screenshot lands:
+2. Re-run exports after any future screenshot changes:
    ```bash
    cd VisaPhotoApps/Marketing/UK/appstore && npm run export
    cd VisaPhotoApps/Marketing/UK/xiaohongshu && npm run export
