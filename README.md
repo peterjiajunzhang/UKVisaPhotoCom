@@ -1,6 +1,6 @@
 # UKVisaPhotoCom — marketing site
 
-GitHub Pages (pending first push): **https://peterjiajunzhang.github.io/UKVisaPhotoCom/**
+Live site: **https://uk.visaphoto1tap.com/**
 
 | Path | Purpose |
 |------|---------|
@@ -8,8 +8,8 @@ GitHub Pages (pending first push): **https://peterjiajunzhang.github.io/UKVisaPh
 | `privacy.html` | Privacy policy (linked from App Store Connect) |
 | `sitemap.xml` / `robots.txt` | SEO |
 | `AppIcon.png` | **Real app icon**, copied from `VisaPhotoApps/UKVisaPhoto/Assets.xcassets/AppIcon.appiconset/AppIcon.png` — unlike India/Japan/Canada, this one already existed |
-| `marketing/xiaohongshu-uk/` | Xiaohongshu post previews & export scripts |
-| `marketing/appstore-uk/` | App Store screenshot campaign previews & export scripts |
+| `VisaPhotoApps/Marketing/UK/xiaohongshu/` | Xiaohongshu post previews & export scripts |
+| `VisaPhotoApps/Marketing/UK/appstore/` | App Store screenshot campaign previews & export scripts |
 | `screenshots/` | Real device screenshots — **does not exist yet, to be provided later** |
 | `demos/` | Real before/after export examples — **does not exist yet, to be provided later** |
 
