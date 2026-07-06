@@ -52,6 +52,14 @@
         .mock-screen { background: #e8e8e2; border-radius: 1.75rem; overflow: hidden; aspect-ratio: 35 / 45; position: relative; }
         .mock-notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 34%; height: 18px; background: #0a1628; border-radius: 999px; }
         .swatch { width: 100%; height: 100%; display: block; }
+        .demo-wall-img { width: 100%; max-width: 280px; margin-left: auto; margin-right: auto; height: auto; display: block; object-fit: contain; object-position: center center; border-radius: 1.25rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); border: 1px solid rgba(15, 23, 42, 0.08); background: #e8e8e2; }
+        .demo-film { display: flex; gap: 18px; overflow-x: auto; padding: 4px 2px 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .demo-film::-webkit-scrollbar { height: 8px; }
+        .demo-film::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.16); border-radius: 999px; }
+        .demo-film-item--original { flex: 0 0 auto; scroll-snap-align: start; width: auto; }
+        .demo-film-original-wrap { width: min(200px, 52vw); border-radius: 22px; overflow: hidden; background: linear-gradient(165deg, #2c2c2e 0%, #1c1c1e 40%, #000 100%); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.06); padding: 4px; }
+        .demo-film-thumb-original { width: 100%; height: auto; max-height: min(340px, 58vh); display: block; object-fit: contain; object-position: center center; border-radius: 18px; background: #000; }
+        .demo-film-label { margin-top: 8px; font-size: 12px; font-weight: 700; color: rgba(15, 23, 42, 0.55); }
     </style>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
@@ -63,6 +71,7 @@
                 <span class="font-semibold text-gray-900 tracking-tight">UK Visa ID Photo 1-Tap</span>
             </div>
             <div class="flex items-center gap-6 text-sm">
+                <a href="#demos" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Demos</a>
                 <a href="#app" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Screenshots</a>
                 <a href="#features" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Features</a>
                 <a href="#compliance-checklist" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Compliance</a>
@@ -127,6 +136,58 @@
                 <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                     <div class="h-28 flex items-end justify-center pb-2" style="background:#e8e8e2;"><span class="text-xs font-semibold text-gray-500">Light grey/cream</span></div>
                     <div class="bg-emerald-50 text-emerald-600 text-xs font-semibold text-center py-2">✓ What this app uses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demos" class="py-20 md:py-28 scroll-mt-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Real exports</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Any background in.<br><span class="text-brand">Light grey/cream UKVI photo</span> out.</h2>
+                <p class="text-gray-500 text-lg max-w-3xl mx-auto">Real examples: kitchen, garden, hallway, street, living room, home — then clean cutouts on <strong class="text-gray-700">light grey/cream (#E8E8E2)</strong>, cropped to <strong class="text-gray-700">35×45mm</strong> proportions.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5 max-w-6xl mx-auto justify-items-center">
+                <figure class="w-full flex flex-col items-center"><img src="demos/demo-01-result.jpg" alt="UK visa photo export example 1" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="w-full flex flex-col items-center"><img src="demos/demo-02-result.jpg" alt="UK visa photo export example 2" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="w-full flex flex-col items-center"><img src="demos/demo-03-result.jpg" alt="UK visa photo export example 3" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="w-full flex flex-col items-center"><img src="demos/demo-04-result.jpg" alt="UK visa photo export example 4" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="w-full flex flex-col items-center"><img src="demos/demo-05-result.jpg" alt="UK visa photo export example 5" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="w-full flex flex-col items-center"><img src="demos/demo-06-result.jpg" alt="UK visa photo export example 6" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+            </div>
+
+            <div class="mt-10 max-w-6xl mx-auto">
+                <div class="flex items-center justify-between gap-4 mb-3">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Originals (before) · full aspect, Photos-style</p>
+                    <p class="text-xs text-gray-400 hidden sm:block">Scroll &rarr;</p>
+                </div>
+                <div class="demo-film" aria-label="Original photo strip">
+                    <div class="demo-film-item--original">
+                        <div class="demo-film-original-wrap"><img src="demos/demo-01-original.jpg" alt="Original 1" class="demo-film-thumb-original" decoding="async"></div>
+                        <div class="demo-film-label">Home portrait</div>
+                    </div>
+                    <div class="demo-film-item--original">
+                        <div class="demo-film-original-wrap"><img src="demos/demo-02-original.jpg" alt="Original 2" class="demo-film-thumb-original" decoding="async"></div>
+                        <div class="demo-film-label">Kitchen</div>
+                    </div>
+                    <div class="demo-film-item--original">
+                        <div class="demo-film-original-wrap"><img src="demos/demo-03-original.jpg" alt="Original 3" class="demo-film-thumb-original" decoding="async"></div>
+                        <div class="demo-film-label">Garden</div>
+                    </div>
+                    <div class="demo-film-item--original">
+                        <div class="demo-film-original-wrap"><img src="demos/demo-04-original.jpg" alt="Original 4" class="demo-film-thumb-original" decoding="async"></div>
+                        <div class="demo-film-label">Balcony hallway</div>
+                    </div>
+                    <div class="demo-film-item--original">
+                        <div class="demo-film-original-wrap"><img src="demos/demo-05-original.jpg" alt="Original 5" class="demo-film-thumb-original" decoding="async"></div>
+                        <div class="demo-film-label">Street</div>
+                    </div>
+                    <div class="demo-film-item--original">
+                        <div class="demo-film-original-wrap"><img src="demos/demo-06-original.jpg" alt="Original 6" class="demo-film-thumb-original" decoding="async"></div>
+                        <div class="demo-film-label">Living room</div>
+                    </div>
                 </div>
             </div>
         </div>
