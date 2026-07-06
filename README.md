@@ -10,10 +10,10 @@ Live site: **https://uk.visaphoto1tap.com/**
 | `AppIcon.png` | **Real app icon**, copied from `VisaPhotoApps/UKVisaPhoto/Assets.xcassets/AppIcon.appiconset/AppIcon.png` — unlike India/Japan/Canada, this one already existed |
 | `VisaPhotoApps/Marketing/UK/xiaohongshu/` | Xiaohongshu post previews & export scripts |
 | `VisaPhotoApps/Marketing/UK/appstore/` | App Store screenshot campaign previews & export scripts |
-| `screenshots/` | Real device screenshots — **still does not exist**; one file was dropped into `test/UKVisaPhoto/screenshots/` but it was byte-identical to Japan's `06-saved-photos.png` capture (looks like a mis-copy, not a real UK screenshot) — none used |
+| `screenshots/` | Real device screenshots — **5 of 6 captured** (missing `05-exported.png`); confirmed showing the correct `#E8E8E2` grey/cream background (not white) |
 | `demos/` | Real before/after export pairs — all 6 captured, confirmed showing the correct `#E8E8E2` grey/cream background (not white) |
 
-**Status:** demo export pairs are in and `index.html` has a real `#demos` before/after wall. The `#app` section still uses `.mock-phone` illustrations — no real UK-specific screenshots have been captured yet (see note above). iOS app has no Info.plist/App.swift yet and no Apple ID.
+**Status:** real screenshots and demo pairs are mostly in. `index.html` has a real `#demos` before/after wall and a real `#app` screenshot grid (currently 5 screens: home, checklist, paywall, saved photos, languages). **Still needed: `05-exported.png`** (the unlocked-result screen with Share/Rate/Review/Download/Start over) — drop it into `screenshots/` and add its `<figure>` back into `index.html`'s `#app` grid + the App Store campaign slide that references it. iOS app has no Info.plist/App.swift yet and no Apple ID.
 
 ## The one thing that makes UK different from every other app in this family
 
@@ -22,8 +22,12 @@ Live site: **https://uk.visaphoto1tap.com/**
 ## Before submitting to App Store Connect
 
 1. Once `AppStoreAppleID` is filled in (once the UKVisaPhoto target has an Info.plist and Connect record), update the CTA to a real App Store link.
-2. Drop **real UK app** screenshots into `screenshots/`: `01-home.png`, `02-checklist.png`, `04-paywall.png`, `05-exported.png`, `06-saved-photos.png`, `07-languages.png` (confirm each shows the `#E8E8E2` grey/cream background, not white — a white background in a screenshot means the app has a bug, not that the screenshot is wrong).
-3. Once those exist: replace `.mock-phone` illustrations in `index.html`'s `#app` section with real `<img>` screenshots (mirror the `#demos` section pattern already in place), export the App Store campaign, rebuild the xiaohongshu deck.
+2. Capture `05-exported.png` (see Status above) — the last missing canonical screenshot.
+3. Re-run exports after any new screenshot lands:
+   ```bash
+   cd VisaPhotoApps/Marketing/UK/appstore && npm run export
+   cd VisaPhotoApps/Marketing/UK/xiaohongshu && npm run export
+   ```
 
 **Product facts baked into this site** (source: `VisaPhotoApps/docs/uk-visa-photo-spec.md` — the **best-sourced** spec of the five new countries, gov.uk pages directly fetched, high confidence):
 - Digital-first (UKVI account upload); 35×45mm at **630×810 px** export (exceeds gov.uk's 600×750px minimum at the correct aspect ratio).
