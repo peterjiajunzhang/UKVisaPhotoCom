@@ -116,13 +116,41 @@
             background: #fff;
             box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
         }
-        /* Animated arrow */
+        /* Animated arrow + supporting badges: this column stretches to match the
+           taller sibling (the phone) so the row doesn't leave bare space above/below
+           the shorter before-card. */
         @keyframes heroArrowNudge {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
         }
-        .hero-arrow {
+        .hero-arrow-col {
             flex: 0 0 auto;
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 4px 0;
+        }
+        .hero-arrow-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 8px 6px;
+            width: clamp(56px, 12vw, 76px);
+            text-align: center;
+        }
+        .hero-arrow-badge i { width: 15px; height: 15px; color: #22d3ee; flex-shrink: 0; }
+        .hero-arrow {
             color: #22d3ee;
             animation: heroArrowNudge 1.6s ease-in-out infinite;
         }
@@ -160,6 +188,18 @@
             color: #fff;
             backdrop-filter: blur(4px);
         }
+        /* Demo wall: single-row scrollable results strip */
+        .demo-wall-row {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 4px 2px 14px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .demo-wall-row::-webkit-scrollbar { height: 8px; }
+        .demo-wall-row::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.16); border-radius: 999px; }
+        .demo-wall-item { flex: 0 0 auto; scroll-snap-align: start; width: min(220px, 56vw); }
     </style>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
@@ -264,8 +304,12 @@
                         <img src="appstore/before-original.png" width="1110" height="1310" decoding="async" alt="An everyday photo with a cluttered background, before processing">
                         <figcaption class="hero-pill">Before</figcaption>
                     </figure>
-                    <div class="hero-arrow" aria-hidden="true">
-                        <i data-lucide="arrow-right"></i>
+                    <div class="hero-arrow-col">
+                        <span class="hero-arrow-badge"><i data-lucide="check-circle-2"></i>Compliant</span>
+                        <div class="hero-arrow" aria-hidden="true">
+                            <i data-lucide="arrow-right"></i>
+                        </div>
+                        <span class="hero-arrow-badge"><i data-lucide="zap"></i>Seconds</span>
                     </div>
                     <figure class="hero-after">
                         <div class="hero-phone">
@@ -314,13 +358,13 @@
                 <p class="text-gray-500 text-lg max-w-3xl mx-auto">Real examples: kitchen, garden, hallway, street, living room, home — then clean cutouts on <strong class="text-gray-700">light grey/cream (#E8E8E2)</strong>, cropped to <strong class="text-gray-700">35×45mm</strong> proportions.</p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5 max-w-6xl mx-auto justify-items-center">
-                <figure class="w-full flex flex-col items-center"><img src="demos/demo-01-result.jpg" alt="UK visa photo export example 1" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
-                <figure class="w-full flex flex-col items-center"><img src="demos/demo-02-result.jpg" alt="UK visa photo export example 2" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
-                <figure class="w-full flex flex-col items-center"><img src="demos/demo-03-result.jpg" alt="UK visa photo export example 3" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
-                <figure class="w-full flex flex-col items-center"><img src="demos/demo-04-result.jpg" alt="UK visa photo export example 4" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
-                <figure class="w-full flex flex-col items-center"><img src="demos/demo-05-result.jpg" alt="UK visa photo export example 5" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
-                <figure class="w-full flex flex-col items-center"><img src="demos/demo-06-result.jpg" alt="UK visa photo export example 6" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+            <div class="demo-wall-row" aria-label="Result photo row">
+                <figure class="demo-wall-item"><img src="demos/demo-01-result.jpg" alt="UK visa photo export example 1" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="demo-wall-item"><img src="demos/demo-02-result.jpg" alt="UK visa photo export example 2" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="demo-wall-item"><img src="demos/demo-03-result.jpg" alt="UK visa photo export example 3" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="demo-wall-item"><img src="demos/demo-04-result.jpg" alt="UK visa photo export example 4" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="demo-wall-item"><img src="demos/demo-05-result.jpg" alt="UK visa photo export example 5" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
+                <figure class="demo-wall-item"><img src="demos/demo-06-result.jpg" alt="UK visa photo export example 6" class="demo-wall-img" width="630" height="810" decoding="async"></figure>
             </div>
 
             <div class="mt-10 max-w-6xl mx-auto">
