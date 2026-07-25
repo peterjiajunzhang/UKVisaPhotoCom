@@ -159,6 +159,7 @@
         .demo-wall-row::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.16); border-radius: 999px; }
         .demo-wall-item { flex: 0 0 auto; scroll-snap-align: start; width: min(220px, 56vw); }
     </style>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "549226dd321341ecabfb29a0f9d5be6e"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
@@ -170,7 +171,7 @@
             </div>
             <div class="flex items-center gap-6 text-sm">
                 <a href="#demos" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Demos</a>
-                <a href="#app" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Screenshots</a>
+                <a href="#app" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Inside the app</a>
                 <a href="#features" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Features</a>
                 <a href="#compliance-checklist" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Compliance</a>
                 <a href="#languages" class="text-gray-500 hover:text-gray-900 transition hidden sm:block">Languages</a>
@@ -362,40 +363,16 @@
         </div>
     </section>
 
-    <section id="app" class="py-4 md:py-8 pb-20 md:pb-28 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-14">
-                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">In the app</p>
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Pick a photo.<br><span class="text-brand">UKVI-upload-ready in one tap.</span></h2>
-                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Fresh iPhone screenshots: home, live export checklist, unlock, your on-device Saved Photos library, and the language switcher.</p>
+    <section id="app" class="py-16 md:py-24 bg-gray-50 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">Inside the app</p>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 mb-3">A closer look, without the full tour.</h2>
+            <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto mb-10">Three real App Store screens show the checks, lighting check, and saved exports behind your result.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-10 justify-items-center max-w-4xl mx-auto">
+                <img src="appstore/inside-app-checklist.png" alt="UK Visa Photo App Store screen showing the export checklist before unlock" class="rounded-[1.5rem] shadow-2xl w-full max-w-[260px] h-auto" width="1284" height="2778" loading="lazy" decoding="async">
+                <img src="appstore/inside-app-lighting.png" alt="UK Visa Photo App Store screen showing the lighting check before export" class="rounded-[1.5rem] shadow-2xl w-full max-w-[260px] h-auto" width="1284" height="2778" loading="lazy" decoding="async">
+                <img src="appstore/inside-app-saved.png" alt="UK Visa Photo App Store screen showing Saved Photos on this iPhone" class="rounded-[1.5rem] shadow-2xl w-full max-w-[260px] h-auto" width="1284" height="2778" loading="lazy" decoding="async">
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
-                <figure class="w-full max-w-xs text-left">
-                    <img src="screenshots/01-home.png" alt="UK Visa ID Photo 1-Tap: home screen with Take Photo / Choose from Photos" class="rounded-[2rem] shadow-2xl border border-gray-200 w-full h-auto" width="1170" height="2532" decoding="async" loading="lazy">
-                    <figcaption class="mt-3 text-xs text-gray-500 px-1">Home — Take Photo / Choose from Photos</figcaption>
-                </figure>
-                <figure class="w-full max-w-xs text-left">
-                    <img src="screenshots/02-checklist.png" alt="Full export checklist with UK gov.uk measurements" class="rounded-[2rem] shadow-2xl border border-gray-200 w-full h-auto" width="1170" height="2532" decoding="async" loading="lazy">
-                    <figcaption class="mt-3 text-xs text-gray-500 px-1">Full export checklist — canvas, eye/head %, grey/cream background, JPEG size…</figcaption>
-                </figure>
-                <figure class="w-full max-w-xs text-left">
-                    <img src="screenshots/04-paywall.png" alt="Unlock this export sheet with measurement overlay preview and $1.99 price" class="rounded-[2rem] shadow-2xl border border-gray-200 w-full h-auto" width="1170" height="2532" decoding="async" loading="lazy">
-                    <figcaption class="mt-3 text-xs text-gray-500 px-1">Unlock — preview with live measurement overlay &amp; $1.99 price</figcaption>
-                </figure>
-                <figure class="w-full max-w-xs text-left">
-                    <img src="screenshots/05-exported.png" alt="Unlocked portrait with Share, Rate, Review, Download and Start over" class="rounded-[2rem] shadow-2xl border border-gray-200 w-full h-auto" width="1170" height="2532" decoding="async" loading="lazy">
-                    <figcaption class="mt-3 text-xs text-gray-500 px-1">After export — share / rate / review • download • start over</figcaption>
-                </figure>
-                <figure class="w-full max-w-xs text-left">
-                    <img src="screenshots/06-saved-photos.png" alt="All Saved Photos gallery grid" class="rounded-[2rem] shadow-2xl border border-gray-200 w-full h-auto" width="1170" height="2532" decoding="async" loading="lazy">
-                    <figcaption class="mt-3 text-xs text-gray-500 px-1">Saved Photos — past exports on this iPhone</figcaption>
-                </figure>
-                <figure class="w-full max-w-xs text-left">
-                    <img src="screenshots/07-languages.png" alt="Language switcher menu with seven languages" class="rounded-[2rem] shadow-2xl border border-gray-200 w-full h-auto" width="1170" height="2532" decoding="async" loading="lazy">
-                    <figcaption class="mt-3 text-xs text-gray-500 px-1">Language switcher — 7 interface languages, one tap</figcaption>
-                </figure>
-            </div>
-            <p class="text-center text-sm text-gray-400 mt-12 max-w-2xl mx-auto">The same <strong class="text-gray-600">live checklist</strong> style as our other apps — tuned to gov.uk's visa photo guidance.</p>
         </div>
     </section>
 
