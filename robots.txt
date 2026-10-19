@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://uk.visaphoto1tap.com/sitemap.xml
